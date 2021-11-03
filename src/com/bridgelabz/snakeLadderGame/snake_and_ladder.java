@@ -6,7 +6,7 @@ public class snake_and_ladder {
         int position = 0;
         System.out.println("position is " + position);
 
-        //Taking dicevalue variable for dice number by using random
+        //Taking diceValue variable for dice number by using random
         int diceValue = (int) (Math.random() * 10) % 6 + 1;
 
         //calling the class Utility
@@ -32,7 +32,10 @@ class Utility {
 
                 case 2:
                     position = (position + diceValue);
-
+                    if (position > 100) {
+                        position = (position - diceValue);
+                        continue;
+                    }
                     System.out.println("your position after ladder is :" + position);
                     break;
 
@@ -42,7 +45,7 @@ class Utility {
                     if (position < 0) {
                         position = 0;
                     }
-                    System.out.println("Your Position after snake is :" + position);
+                    System.out.println("Your Position after snake is" + position);
                     break;
             }
         }
